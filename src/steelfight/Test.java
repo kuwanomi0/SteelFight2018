@@ -1,4 +1,4 @@
-package control;
+package steelfight;
 
 import lejos.hardware.Button;
 import lejos.hardware.lcd.LCD;
@@ -32,37 +32,67 @@ public class Test {
         float sonicValue[] = new float[sonic.sampleSize()];
         float gyroValue[] = new float[gyro.sampleSize()];
         float touchValue[] = new float[touch.sampleSize()];
+        int red = 0;
+        int green = 0;
+        int blue = 0;
+        int colorSum = 0;
+        int sonicInt = 0;
+        int gyroInt = 0;
+        int touchInt = 0;
         motorInit();
         gyroSensor.reset();
-        LCD.clear();
-        LCD.drawString("Ready?", 0, 0);
         while ( ! Button.ENTER.isDown() ) {
             // センサーの値取得
             color.fetchSample(colorValue, 0);
             sonic.fetchSample(sonicValue, 0);
             gyro.fetchSample(gyroValue, 0);
             touch.fetchSample(touchValue, 0);
-            LCD.drawString("R: " + colorValue[0], 0, 1);
-            LCD.drawString("G: " + colorValue[1], 0, 2);
-            LCD.drawString("B: " + colorValue[2], 0, 3);
-            LCD.drawString("S: " + sonicValue[0], 0, 4);
-            LCD.drawString("G: " + gyroValue[0], 0, 5);
-            LCD.drawString("T: " + touchValue[0], 0, 6);
+            // int型に変換
+            red = (int)(colorValue[0] * 100);
+            green = (int)(colorValue[1] * 100);
+            blue = (int)(colorValue[2] * 100);
+            colorSum = (int)(red + green + blue);
+            sonicInt = (int)(sonicValue[0] * 100);
+            gyroInt = (int)(gyroValue[0]);
+            touchInt = (int)(touchValue[0]);
+            LCD.clear();
+            LCD.drawString("Ready?", 0, 0);
+            LCD.drawString("Red: " + red, 0, 1);
+            LCD.drawString("Gre: " + green, 0, 2);
+            LCD.drawString("Blu: " + blue, 0, 3);
+            LCD.drawString("RGB: " + colorSum, 0, 4);
+            LCD.drawString("Son: " + sonicInt, 0, 5);
+            LCD.drawString("Gyr: " + gyroInt, 0, 6);
+            LCD.drawString("Tou: " + touchInt, 0, 7);
             Delay.msDelay(100);
         }
-        LCD.drawString("Go !!", 0, 0);
         while ( ! Button.ESCAPE.isDown() ) {
             motorSet(500, 500);
             color.fetchSample(colorValue, 0);
+            red = (int)(colorValue[0] * 100);
+            green = (int)(colorValue[1] * 100);
+            blue = (int)(colorValue[2] * 100);
+            colorSum = (int)(red + green + blue);
             sonic.fetchSample(sonicValue, 0);
             gyro.fetchSample(gyroValue, 0);
             touch.fetchSample(touchValue, 0);
-            LCD.drawString("R: " + colorValue[0], 0, 1);
-            LCD.drawString("G: " + colorValue[1], 0, 2);
-            LCD.drawString("B: " + colorValue[2], 0, 3);
-            LCD.drawString("S: " + sonicValue[0], 0, 4);
-            LCD.drawString("G: " + gyroValue[0], 0, 5);
-            LCD.drawString("T: " + touchValue[0], 0, 6);
+            // int型に変換
+            red = (int)(colorValue[0] * 100);
+            green = (int)(colorValue[1] * 100);
+            blue = (int)(colorValue[2] * 100);
+            colorSum = (int)(red + green + blue);
+            sonicInt = (int)(sonicValue[0] * 100);
+            gyroInt = (int)(gyroValue[0]);
+            touchInt = (int)(touchValue[0]);
+            LCD.clear();
+            LCD.drawString("Ready?", 0, 0);
+            LCD.drawString("Red: " + red, 0, 1);
+            LCD.drawString("Gre: " + green, 0, 2);
+            LCD.drawString("Blu: " + blue, 0, 3);
+            LCD.drawString("RGB: " + colorSum, 0, 4);
+            LCD.drawString("Son: " + sonicInt, 0, 5);
+            LCD.drawString("Gyr: " + gyroInt, 0, 6);
+            LCD.drawString("Tou: " + touchInt, 0, 7);
             Delay.msDelay(100);
         }
     }
