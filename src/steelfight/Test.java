@@ -35,6 +35,7 @@ public class Test {
         SecondCounter counter = new SecondCounter();
         PID pidLine = new PID(1.2500F, 0.0001F, 0.1700F);
         PID pidGyro = new PID(1.0F, 0.0005F, 0.07F);
+        Distance dis = new Distance();
         int forward = 0;
         int turn = 0;
         int red = 0;
@@ -93,6 +94,9 @@ public class Test {
             sonic.fetchSample(sonicValue, 0);
             gyro.fetchSample(gyroValue, 0);
             touch.fetchSample(touchValue, 0);
+            dis.update(leftMotor.getTachoCount(), rightMotor.getTachoCount());
+
+
             // int型に変換
             red = (int)(colorValue[0] * 100);
             green = (int)(colorValue[1] * 100);
@@ -102,18 +106,40 @@ public class Test {
             gyroInt = (int)(gyroValue[0]);
             touchInt = (int)(touchValue[0]);
 
-            forward = 50;
+//            forward = 75;
 
             // ライントレース
-            turn = pidLine.calcControl(70 - colorSum);
+//            turn = pidLine.calcControl(70 - colorSum);
 
             // ジャイロトレース
-//                if (counter.getSecond() < 10) {
-//                    turn = pidGyro.calcControl(0 - gyroInt);
+//                if (counter.getSecond() < 2) {
+//                    forward = 70;
+//                    turn = pidGyro.calcControl(-40 - gyroInt);
+//                }
+//                else if (counter.getSecond() < 6){
+//                    forward = 70;
+//                    turn = pidGyro.calcControl(17 - gyroInt);
+//                }
+//                else if (counter.getSecond() < 12) {
+//                    forward = -70;
+//                    turn = -pidGyro.calcControl(5 - gyroInt);
+//                }
+//                else if (counter.getSecond() < 13) {
+//                    forward = 70;
+//                    turn = pidGyro.calcControl(20 - gyroInt);
 //                }
 //                else {
-//                    turn = pidGyro.calcControl(90 - gyroInt);
+//                    forward = 70;
+//                    turn = pidGyro.calcControl(0 - gyroInt);
 //                }
+
+            if (dis.getDistance() < 1800) {
+                forward = 70;
+                turn = pidGyro.calcControl(0 - gyroInt);
+            }
+            else {
+                forward = turn = 0;
+            }
 
             LCD.clear();
             LCD.drawString("Go !!", 0, 0);
@@ -121,7 +147,8 @@ public class Test {
             LCD.drawString("Gre: " + green, 0, 2);
             LCD.drawString("Blu: " + blue, 0, 3);
             LCD.drawString("RGB: " + colorSum, 0, 4);
-            LCD.drawString("Son: " + sonicInt, 0, 5);
+          LCD.drawString("Dis: " + dis.getDistance(), 0, 5);
+//            LCD.drawString("Son: " + sonicInt, 0, 5);
             LCD.drawString("Gyr: " + gyroInt, 0, 6);
             LCD.drawString("Tur: " + turn, 0, 7);
 //            LCD.drawString("Tou: " + touchInt, 0, 7);
