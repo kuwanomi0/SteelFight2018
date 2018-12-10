@@ -33,6 +33,10 @@ public class Test {
         float gyroValue[] = new float[gyro.sampleSize()];
         float touchValue[] = new float[touch.sampleSize()];
         SecondCounter counter = new SecondCounter();
+        PID pidLine = new PID(1.2500F, 0.0001F, 0.1700F);
+        PID pidGyro = new PID(1.0F, 0.0005F, 0.07F);
+        int forward = 0;
+        int turn = 0;
         int red = 0;
         int green = 0;
         int blue = 0;
@@ -97,6 +101,20 @@ public class Test {
             sonicInt = (int)(sonicValue[0] * 100);
             gyroInt = (int)(gyroValue[0]);
             touchInt = (int)(touchValue[0]);
+
+            forward = 50;
+
+            // ライントレース
+            turn = pidLine.calcControl(70 - colorSum);
+
+            // ジャイロトレース
+//                if (counter.getSecond() < 10) {
+//                    turn = pidGyro.calcControl(0 - gyroInt);
+//                }
+//                else {
+//                    turn = pidGyro.calcControl(90 - gyroInt);
+//                }
+
             LCD.clear();
             LCD.drawString("Go !!", 0, 0);
             LCD.drawString("Red: " + red, 0, 1);
@@ -105,8 +123,9 @@ public class Test {
             LCD.drawString("RGB: " + colorSum, 0, 4);
             LCD.drawString("Son: " + sonicInt, 0, 5);
             LCD.drawString("Gyr: " + gyroInt, 0, 6);
-            LCD.drawString("Arm: " + armflag, 0, 7);
+            LCD.drawString("Tur: " + turn, 0, 7);
 //            LCD.drawString("Tou: " + touchInt, 0, 7);
+
             if ( Button.LEFT.isDown() ) {
                 armflag = 0;
             }
@@ -115,11 +134,9 @@ public class Test {
             }
 
             armSet(armflag);
+            steeringRun(forward, turn);
 
-
-            steeringRun(750, 0);
-
-            Delay.msDelay(100);
+            Delay.msDelay(10);
         }
         counter.stop();
     }
@@ -165,13 +182,13 @@ public class Test {
         int rightMotorPower = forward;
         int leftMotorPower = forward;
         if (turn > 0) {
-            rightMotorPower = forward - (forward * ((2 * turn) / forward));
+            rightMotorPower = forward - (forward * (2 * turn) / 100);
         }
         if (turn < 0) {
             turn = turn * (-1);
-            leftMotorPower = forward - (forward * ((2 * turn) / forward));
+            leftMotorPower = forward - (forward * (2 * turn) / 100);
         }
-        motorSet(rightMotorPower, leftMotorPower);
+        motorSet(rightMotorPower * 10, leftMotorPower * 10);
     }
 
     public static void armMotorSet(int armMotorPow) {

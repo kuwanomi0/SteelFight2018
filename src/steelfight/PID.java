@@ -15,7 +15,7 @@ public class PID {
     private float kd;       /* 微分定数 */
     private int diff[] = new int[2];    /* カラー格納用変数 */
     private float integral; /* 積分計算用変数 */
-    private final float LIMIT = 100.0f;
+    private final float LIMIT = 1000.0f;
 
     /**
      * コンストラクタ
