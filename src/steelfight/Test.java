@@ -13,13 +13,13 @@ import lejos.robotics.RegulatedMotor;
 import lejos.utility.Delay;
 
 public class Test {
-    static RegulatedMotor armMotor = Motor.A;
-    static RegulatedMotor leftMotor = Motor.B;
-    static RegulatedMotor rightMotor = Motor.C;
-    static EV3ColorSensor colorSensor = new EV3ColorSensor(SensorPort.S1);
-    static EV3UltrasonicSensor sonicSensor = new EV3UltrasonicSensor(SensorPort.S2);
-    static EV3GyroSensor gyroSensor = new EV3GyroSensor(SensorPort.S3);
-    static EV3TouchSensor touchSensor = new EV3TouchSensor(SensorPort.S4);
+    static final RegulatedMotor armMotor = Motor.A;
+    static final RegulatedMotor leftMotor = Motor.B;
+    static final RegulatedMotor rightMotor = Motor.C;
+    static final EV3ColorSensor colorSensor = new EV3ColorSensor(SensorPort.S1);
+    static final EV3UltrasonicSensor sonicSensor = new EV3UltrasonicSensor(SensorPort.S2);
+    static final EV3GyroSensor gyroSensor = new EV3GyroSensor(SensorPort.S3);
+    static final EV3TouchSensor touchSensor = new EV3TouchSensor(SensorPort.S4);
 
     public static void main(String[] args) {
         // 使用するセンサー定義
@@ -32,6 +32,7 @@ public class Test {
         float sonicValue[] = new float[sonic.sampleSize()];
         float gyroValue[] = new float[gyro.sampleSize()];
         float touchValue[] = new float[touch.sampleSize()];
+        SecondCounter counter = new SecondCounter();
         int red = 0;
         int green = 0;
         int blue = 0;
@@ -39,6 +40,7 @@ public class Test {
         int sonicInt = 0;
         int gyroInt = 0;
         int touchInt = 0;
+        int armflag = 0;
         motorInit();
         gyroSensor.reset();
         while ( ! Button.ENTER.isDown() ) {
@@ -63,11 +65,22 @@ public class Test {
             LCD.drawString("RGB: " + colorSum, 0, 4);
             LCD.drawString("Son: " + sonicInt, 0, 5);
             LCD.drawString("Gyr: " + gyroInt, 0, 6);
-            LCD.drawString("Tou: " + touchInt, 0, 7);
+            LCD.drawString("Arm: " + armMotor.getTachoCount(), 0, 7);
+//            LCD.drawString("Tou: " + touchInt, 0, 7);
+            if ( Button.LEFT.isDown() ) {
+                armMotorSet(200);
+            }
+            else if ( Button.RIGHT.isDown() ) {
+                armMotorSet(-200);
+            }
+            else {
+                armMotorSet(0);
+            }
             Delay.msDelay(100);
         }
-        while ( ! Button.ESCAPE.isDown() ) {
-            motorSet(500, 500);
+        armMotorInit();
+        counter.start();
+        while ( ! Button.ESCAPE.isDown()  && counter.getSecond() < 60) {
             color.fetchSample(colorValue, 0);
             red = (int)(colorValue[0] * 100);
             green = (int)(colorValue[1] * 100);
@@ -85,25 +98,43 @@ public class Test {
             gyroInt = (int)(gyroValue[0]);
             touchInt = (int)(touchValue[0]);
             LCD.clear();
-            LCD.drawString("Ready?", 0, 0);
+            LCD.drawString("Go !!", 0, 0);
             LCD.drawString("Red: " + red, 0, 1);
             LCD.drawString("Gre: " + green, 0, 2);
             LCD.drawString("Blu: " + blue, 0, 3);
             LCD.drawString("RGB: " + colorSum, 0, 4);
             LCD.drawString("Son: " + sonicInt, 0, 5);
             LCD.drawString("Gyr: " + gyroInt, 0, 6);
-            LCD.drawString("Tou: " + touchInt, 0, 7);
+            LCD.drawString("Arm: " + armflag, 0, 7);
+//            LCD.drawString("Tou: " + touchInt, 0, 7);
+            if ( Button.LEFT.isDown() ) {
+                armflag = 0;
+            }
+            else if ( Button.RIGHT.isDown() ) {
+                armflag = 1;
+            }
+
+            armSet(armflag);
+
+
+            steeringRun(750, 0);
+
             Delay.msDelay(100);
         }
+        counter.stop();
     }
 
     private static void motorInit() {
-        armMotor.resetTachoCount();
-        armMotor.rotateTo(0);
+        armMotorInit();
         leftMotor.resetTachoCount();
         leftMotor.rotateTo(0);
         rightMotor.resetTachoCount();
         rightMotor.rotateTo(0);
+    }
+
+    private static void armMotorInit() {
+        armMotor.resetTachoCount();
+        armMotor.rotateTo(0);
     }
 
     public static void motorSet(int lMotorPow, int rMotorPow) {
@@ -127,6 +158,52 @@ public class Test {
         }
         else {
             rightMotor.stop();
+        }
+    }
+
+    public static void steeringRun(int forward, int turn) {
+        int rightMotorPower = forward;
+        int leftMotorPower = forward;
+        if (turn > 0) {
+            rightMotorPower = forward - (forward * ((2 * turn) / forward));
+        }
+        if (turn < 0) {
+            turn = turn * (-1);
+            leftMotorPower = forward - (forward * ((2 * turn) / forward));
+        }
+        motorSet(rightMotorPower, leftMotorPower);
+    }
+
+    public static void armMotorSet(int armMotorPow) {
+        armMotor.setSpeed(armMotorPow);
+
+        if ( armMotorPow > 0 ) {
+            armMotor.forward();
+        }
+        else if ( armMotorPow < 0 ) {
+            armMotor.backward();
+        }
+        else {
+            armMotor.stop();
+        }
+    }
+
+    public static void armSet(int armflag) {
+        if (armflag == 0) {
+            if (armMotor.getTachoCount() < 0) {
+                armMotorSet(600);
+            }
+            else {
+                armMotorSet(0);
+            }
+        }
+        if (armflag == 1) {
+            if (armMotor.getTachoCount() > -650) {
+                armMotorSet(-600);
+            }
+            else {
+                armMotorSet(0);
+            }
         }
     }
 }
