@@ -11,6 +11,7 @@ import lejos.hardware.sensor.EV3UltrasonicSensor;
 import lejos.hardware.sensor.SensorMode;
 import lejos.robotics.RegulatedMotor;
 import lejos.utility.Delay;
+import lejos.utility.Stopwatch;
 
 public class Test {
     static final RegulatedMotor armMotor = Motor.A;
@@ -23,11 +24,22 @@ public class Test {
 
     public static void main(String[] args) {
         // 区間情報
-        CourseData[] couseData = new CourseData[4];
-            couseData[0] = new CourseData(0, 0, 0, 0);
-            couseData[1] = new CourseData(0, 0, 0, 0);
-            couseData[2] = new CourseData(0, 0, 0, 0);
-            couseData[3] = new CourseData(0, 0, 0, 0);
+        int courseNumber = 0;
+        CourseParameter[] courseParams = new CourseParameter[9];
+        //                                   ( 距離, 時間,  ｿﾅｰ,   色, ﾄﾚﾓ, 前進, 旋回,  ｱｰﾑ,  PID );
+        courseParams[0] = new CourseParameter(  600,    0,    0,    0,   2,   75,    0,    0,   38 );
+        courseParams[1] = new CourseParameter(  100,    0,    0,    0,   2,   25,    0,    0,   38 );
+        courseParams[2] = new CourseParameter(  100,    0,    0,    0,   2,   25,    0,    0,  -15 );
+        courseParams[3] = new CourseParameter( 1200,    0,    0,    0,   2,   75,    0,    0,  -15 );
+        courseParams[4] = new CourseParameter(  100,    0,    0,    0,   2,   25,    0,    0,  -15 );
+        courseParams[5] = new CourseParameter(  100,    0,    0,    0,   2,  -25,    0,    0,   -1 );
+        courseParams[6] = new CourseParameter( 1500,    0,    0,    0,   2,  -75,    0,    0,   -1 );
+        courseParams[7] = new CourseParameter(  100,    0,    0,    0,   2,  -25,    0,    0,   -1 );
+        courseParams[7] = new CourseParameter(  280,    0,    0,    0,   2,   25,    0,    0,  -15 );
+        courseParams[7] = new CourseParameter(  100,    0,    0,    0,   2,   25,    0,    0,    0 );
+        courseParams[7] = new CourseParameter( 1300,    0,    0,    0,   2,   75,    0,    0,    0 );
+        courseParams[8] = new CourseParameter(    0,    0,    0,    0,  -1,    0,    0,    0,    0 );
+
 
         // 使用するセンサー定義
         SensorMode color = colorSensor.getMode(2);
@@ -40,9 +52,9 @@ public class Test {
         float gyroValue[] = new float[gyro.sampleSize()];
         float touchValue[] = new float[touch.sampleSize()];
         SecondCounter counter = new SecondCounter();
-        SecondCounter timer = new SecondCounter();
-        PID pidLine = new PID(1.2500F, 0.0001F, 0.1700F);
-        PID pidGyro = new PID(1.0000F, 0.0005F, 0.0700F);
+        Stopwatch stopwatch = new Stopwatch();
+        PID pidLine = new PID(1.2500F, 0.0001F, 0.1700F); /* ライントレース用PID */
+        PID pidGyro = new PID(1.0000F, 0.0005F, 0.0700F); /* ジャイロトレース用PID */
         Distance dis = new Distance();
         int forward = 0;
         int turn = 0;
@@ -50,10 +62,12 @@ public class Test {
         int green = 0;
         int blue = 0;
         int colorSum = 0;
+        int colorId = 0;
         int sonicInt = 0;
         int gyroInt = 0;
         int touchInt = 0;
-        int armflag = 0;
+        int armMode = 0;
+        int beforeDistance = 0;
 
         // モジュール初期化
         motorInit();
@@ -107,10 +121,10 @@ public class Test {
 
         // タイマー計測開始
         counter.start();
-        timer.start();
+        stopwatch.reset();
 
         // 走行（10ms周期で実行）60秒経過すると終了する
-        while ( ! Button.ESCAPE.isDown()  && counter.getSecond() < 60) {
+        while ( ! Button.ESCAPE.isDown() && counter.getSecond() < 6000 && courseParams[courseNumber].getTraceMode() != -1) {
             // センサー取得
             color.fetchSample(colorValue, 0);
             sonic.fetchSample(sonicValue, 0);
@@ -129,27 +143,55 @@ public class Test {
             gyroInt = (int)(gyroValue[0]);
             touchInt = (int)(touchValue[0]);
 
+            // 区間情報変更の確認
+            if (courseChange(courseParams[courseNumber], dis.getDistance() - beforeDistance, stopwatch.elapsed(), sonicInt, colorId)) {
+                courseNumber++;
+                beforeDistance = dis.getDistance();
+                stopwatch.reset();
+            }
+
+            // 区間情報から値を取得する
+            forward = courseParams[courseNumber].getForward();
+            turn = courseParams[courseNumber].getTurn();
+
+
+            if (courseParams[courseNumber].getTraceMode() == 0) {
+                turn = 0;
+            }
+            else if (courseParams[courseNumber].getTraceMode() == 1) {
+                turn = turn + pidLine.calcControl(courseParams[courseNumber].getPidTarget() - colorSum);
+                if ( forward < 0 ) {
+                    turn = turn * (-1);
+                }
+            }
+            else if (courseParams[courseNumber].getTraceMode() == 2) {
+                turn = turn + pidGyro.calcControl(courseParams[courseNumber].getPidTarget() - gyroInt);
+                if ( forward < 0 ) {
+                    turn = turn * (-1);
+                }
+            }
+
             // LCD表示
             LCD.clear();
             LCD.drawString("Go !!", 0, 0);
             LCD.drawString("Red: " + red, 0, 1);
             LCD.drawString("Gre: " + green, 0, 2);
             LCD.drawString("Blu: " + blue, 0, 3);
-            LCD.drawString("RGB: " + colorSum, 0, 4);
+            LCD.drawString("RGB: " + courseNumber, 0, 4);
             LCD.drawString("Son: " + sonicInt, 0, 5);
             LCD.drawString("Gyr: " + gyroInt, 0, 6);
             LCD.drawString("Dis: " + dis.getDistance(), 0, 7);
 
             // アーム手動切り替え
             if ( Button.LEFT.isDown() ) {
-                armflag = 0;
+                armMode = 0;
             }
             else if ( Button.RIGHT.isDown() ) {
-                armflag = 1;
+                armMode = 1;
             }
 
             // モーター制御
-            armSet(armflag);
+            armSet(armMode);
             steeringRun(forward, turn);
 
             // 10ms周期で実行
@@ -157,7 +199,47 @@ public class Test {
         }
         // タイマーを止める
         counter.stop();
-        timer.stop();
+    }
+
+    /**
+     * 区間変更条件確認
+     * @param courseParameter
+     * @param dis
+     * @param second
+     * @param sonic
+     * @param colorId
+     * @return
+     */
+    private static boolean courseChange(CourseParameter courseParameter, float dis, int second, int sonic, int colorId) {
+        boolean changed = false;
+        if (courseParameter.getDis() != 0) {
+            if (dis < 0) {
+                dis = dis * (-1);
+            }
+            if (dis >= courseParameter.getDis()) {
+                changed = true;
+            }
+        }
+
+        if (courseParameter.getTime() != 0) {
+            if (second >= courseParameter.getTime()) {
+                changed = true;
+            }
+        }
+
+        if (courseParameter.getSonarDis() != 0) {
+            if (sonic <= courseParameter.getSonarDis()) {
+                changed = true;
+            }
+        }
+
+        if (courseParameter.getColorId() != 0) {
+            if (courseParameter.getColorId() == colorId) {
+                changed = true;
+            }
+        }
+
+        return changed;
     }
 
     /**
@@ -256,10 +338,10 @@ public class Test {
 
     /**
      * アームモーター設定
-     * @param armflag
+     * @param armMode
      */
-    public static void armSet(int armflag) {
-        if (armflag == 0) {
+    public static void armSet(int armMode) {
+        if (armMode == 0) {
             if (armMotor.getTachoCount() < 0) {
                 armMotorSet(600);
             }
@@ -267,7 +349,7 @@ public class Test {
                 armMotorSet(0);
             }
         }
-        if (armflag == 1) {
+        if (armMode == 1) {
             if (armMotor.getTachoCount() > -650) {
                 armMotorSet(-600);
             }

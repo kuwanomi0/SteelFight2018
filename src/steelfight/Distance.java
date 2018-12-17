@@ -37,8 +37,8 @@ public class Distance {
     }
 
     /* 走行距離を取得 */
-    float getDistance(){
-        return distance;
+    int getDistance(){
+        return (int)distance;
     }
 
     /* 左タイヤの4ms間の距離を取得 */
