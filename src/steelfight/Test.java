@@ -1,5 +1,8 @@
 package steelfight;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lejos.hardware.Button;
 import lejos.hardware.Sound;
 import lejos.hardware.lcd.LCD;
@@ -26,35 +29,44 @@ public class Test {
     public static void main(String[] args) {
         // 区間情報
         int courseNumber = 0;
-        CourseParameter[] courseParams = new CourseParameter[24];
+        List<CourseParameter[]> selectCourse = new ArrayList<>();
+        CourseParameter[] courseParams;
+        CourseParameter[] courseParamsQ = new CourseParameter[26];
         //                                   ( 距離, 時間,  ｿﾅｰ,   色, ﾄﾚﾓ, 前進, 旋回,  ｱｰﾑ,  PID );
-        courseParams[0]  = new CourseParameter(    0,  100,    0,    0,   2,   10,  100,    0,   38 );
-        courseParams[1]  = new CourseParameter(  600,    0,    0,    0,   2,   70,    0,    0,   38 );
-        courseParams[2]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,   38 );
-        courseParams[3]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,  -16 );
-        courseParams[4]  = new CourseParameter( 1200,    0,    0,    0,   2,   70,    0,    0,  -16 );
-        courseParams[5]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,  -16 );
-        courseParams[6]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    0,   -1 );
-        courseParams[7]  = new CourseParameter( 1500,    0,    0,    0,   2,  -70,    0,    0,   -1 );
-        courseParams[8]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    0,   -1 );
-        courseParams[9]  = new CourseParameter(    0,  300,    0,    0,   0,    0,    0,    0,   -1 );
-        courseParams[10] = new CourseParameter(  270,    0,    0,    0,   2,   20,    0,    0,  -28 );
-        courseParams[11] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,    1 );
-        courseParams[12] = new CourseParameter( 1200,    0,    0,    0,   2,   70,    0,    0,    1 );
-        courseParams[13] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,    1 );
-        courseParams[14] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    0,    0 );
-        courseParams[15] = new CourseParameter( 1500,    0,    0,    0,   2,  -70,    0,    0,    0 );
-        courseParams[16] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    0,    0 );
-        courseParams[17] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,  -41 );
-        courseParams[18] = new CourseParameter(  450,    0,    0,    0,   2,   70,    0,    0,  -41 );
-        courseParams[19] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,  -41 );
-        courseParams[20] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,   18 );
-        courseParams[21] = new CourseParameter( 1120,    0,    0,    0,   2,   70,    0,    0,   18 );
-        courseParams[22] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,   18 );
-        courseParams[22] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    0,   -1 );
-        courseParams[22] = new CourseParameter(    0,10000,    0,    5,   2,  -70,    0,    0,   -1 );
-        courseParams[23] = new CourseParameter(    0,    0,    0,    0,  -1,    0,    0,    0,    0 );
+        courseParamsQ[0]  = new CourseParameter(    0,  100,    0,    0,   0,   10,  100,    0,   38 );
+        courseParamsQ[1]  = new CourseParameter(  600,    0,    0,    0,   2,   70,    0,    0,   38 );
+        courseParamsQ[2]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,   38 );
+        courseParamsQ[3]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,  -16 );
+        courseParamsQ[4]  = new CourseParameter( 1200,    0,    0,    0,   2,   70,    0,    0,  -16 );
+        courseParamsQ[5]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,  -16 );
+        courseParamsQ[6]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    0,   -1 );
+        courseParamsQ[7]  = new CourseParameter( 1500,    0,    0,    0,   2,  -70,    0,    0,   -1 );
+        courseParamsQ[8]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    0,   -1 );
+        courseParamsQ[9]  = new CourseParameter(    0,  300,    0,    0,   0,    0,    0,    0,   -1 );
+        courseParamsQ[10] = new CourseParameter(  270,    0,    0,    0,   2,   20,    0,    0,  -28 );
+        courseParamsQ[11] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,    1 );
+        courseParamsQ[12] = new CourseParameter( 1200,    0,    0,    0,   2,   70,    0,    0,    1 );
+        courseParamsQ[13] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,    1 );
+        courseParamsQ[14] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    0,    0 );
+        courseParamsQ[15] = new CourseParameter( 1500,    0,    0,    0,   2,  -70,    0,    0,    0 );
+        courseParamsQ[16] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    0,    0 );
+        courseParamsQ[17] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,  -42 );
+        courseParamsQ[18] = new CourseParameter(  450,    0,    0,    0,   2,   70,    0,    0,  -42 );
+        courseParamsQ[19] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,  -42 );
+        courseParamsQ[20] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,   18 );
+        courseParamsQ[21] = new CourseParameter( 1120,    0,    0,    0,   2,   70,    0,    0,   18 );
+        courseParamsQ[22] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,   18 );
+        courseParamsQ[23] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    0,   -1 );
+        courseParamsQ[24] = new CourseParameter(    0,10000,    0,    5,   2,  -70,    0,    0,   -1 );
+        courseParamsQ[25] = new CourseParameter(    0,    0,    0,    0,  -1,    0,    0,    0,    0 );
 
+        CourseParameter[] courseParamsTest = new CourseParameter[2];
+        //                                        ( 距離, 時間,  ｿﾅｰ,   色, ﾄﾚﾓ, 前進, 旋回,  ｱｰﾑ,  PID );
+        courseParamsTest[0]  = new CourseParameter( 1000,    0,    7,    0,   3,   50,    0,    0,   38 );
+        courseParamsTest[1]  = new CourseParameter(    0,    0,    0,    0,  -1,    0,    0,    0,    0 );
+
+        selectCourse.add(courseParamsQ);
+        selectCourse.add(courseParamsTest);
 
         // 使用するセンサー定義
         SensorMode color = colorSensor.getMode(2);
@@ -87,6 +99,8 @@ public class Test {
         int tmpGyro = 0;
         int search = 0;
         int sonerSearchS = 0;
+        int selectCourseNumbar = 0;
+        int reverseSwitch = 0;
 
         // モジュール初期化
         motorInit();
@@ -120,14 +134,32 @@ public class Test {
 
             // LCD出力
             LCD.clear();
-            LCD.drawString("Ready?", 0, 0);
+            LCD.drawString("Ready?  " + selectCourseNumbar, 0, 0);
             LCD.drawString("Red: " + red, 0, 1);
             LCD.drawString("Gre: " + green, 0, 2);
             LCD.drawString("Blu: " + blue, 0, 3);
             LCD.drawString("RGB: " + colorSum, 0, 4);
             LCD.drawString("Col: " + colorId, 0, 5);
             LCD.drawString("Gyr: " + gyroInt, 0, 6);
-            LCD.drawString("Arm: " + armMotor.getTachoCount(), 0, 7);
+            LCD.drawString("REVERS: " + reverseSwitch, 0, 7);
+
+            if ( Button.UP.isDown() ) {
+                if (selectCourseNumbar >= selectCourse.size() - 1) {
+                    selectCourseNumbar = 0;
+                }
+                else {
+                    selectCourseNumbar++;
+                }
+            }
+
+            if ( Button.DOWN.isDown() ) {
+                if ( reverseSwitch == 0 ) {
+                    reverseSwitch = 1;
+                }
+                else if ( reverseSwitch == 1) {
+                    reverseSwitch = 0;
+                }
+            }
 
             // アーム調整
             if ( Button.LEFT.isDown() ) {
@@ -144,12 +176,18 @@ public class Test {
             Delay.msDelay(20);
         }
 
+        courseParams = selectCourse.get(selectCourseNumbar);
+
         // アームモーターリセット
         armMotorInit();
 
         // タイマー計測開始
         counter.reset();
         stopwatch.reset();
+        if (reverseSwitch == 1) {
+            sonerSearchS = 1;
+
+        }
 
         // 走行（10ms周期で実行）60秒経過すると終了する
         while ( ! Button.ESCAPE.isDown() && counter.elapsed() < 600000 && courseParams[courseNumber].getTraceMode() != -1) {
@@ -187,16 +225,32 @@ public class Test {
             // 区間情報から値を取得する
             forward = courseParams[courseNumber].getForward();
             turn = courseParams[courseNumber].getTurn();
+            if (reverseSwitch == 1 && courseParams[courseNumber].getTraceMode() == 0) {
+                turn = courseParams[courseNumber].getTurn() * (-1);
+            }
 
 
             if (courseParams[courseNumber].getTraceMode() == 1) {
-                turn = turn + pidLine.calcControl(courseParams[courseNumber].getPidTarget() - colorSum);
+                int lineTurn = pidLine.calcControl(courseParams[courseNumber].getPidTarget() - colorSum);
+                if (reverseSwitch == 1) {
+                    lineTurn = lineTurn * (-1);
+                }
+                turn = turn + lineTurn;
                 if ( forward < 0 ) {
                     turn = turn * (-1);
                 }
             }
             else if (courseParams[courseNumber].getTraceMode() == 2) {
-                turn = turn + pidGyro.calcControl(courseParams[courseNumber].getPidTarget() - gyroInt);
+                int targetGyro = courseParams[courseNumber].getPidTarget();
+                if (reverseSwitch == 1) {
+                    targetGyro = targetGyro * (-1);
+                }
+                if (reverseSwitch == 0) {
+                    turn = turn + pidGyro.calcControl(targetGyro - gyroInt);
+                }
+                else if (reverseSwitch == 1) {
+                    turn = turn + (pidGyro.calcControl(gyroInt - targetGyro) * (-1));
+                }
                 if ( forward < 0 ) {
                     turn = turn * (-1);
                 }
