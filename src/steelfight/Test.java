@@ -1,6 +1,7 @@
 package steelfight;
 
 import lejos.hardware.Button;
+import lejos.hardware.Sound;
 import lejos.hardware.lcd.LCD;
 import lejos.hardware.motor.Motor;
 import lejos.hardware.port.SensorPort;
@@ -148,12 +149,16 @@ public class Test {
             gyroInt = (int)(gyroValue[0]);
             touchInt = (int)(touchValue[0]);
 
+            // 色の判定
+            colorId = col.decision(red, green, blue);
 
             // 区間情報変更の確認
             if (courseChange(courseParams[courseNumber], dis.getDistance() - beforeDistance, stopwatch.elapsed(), sonicInt, colorId)) {
                 courseNumber++;
                 beforeDistance = dis.getDistance();
                 stopwatch.reset();
+                //ビープ音を鳴らす
+                Sound.beep();
             }
 
             // 区間情報から値を取得する
