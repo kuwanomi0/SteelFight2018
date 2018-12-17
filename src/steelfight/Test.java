@@ -26,22 +26,34 @@ public class Test {
     public static void main(String[] args) {
         // 区間情報
         int courseNumber = 0;
-        CourseParameter[] courseParams = new CourseParameter[9];
+        CourseParameter[] courseParams = new CourseParameter[24];
         //                                   ( 距離, 時間,  ｿﾅｰ,   色, ﾄﾚﾓ, 前進, 旋回,  ｱｰﾑ,  PID );
-        courseParams[0] = new CourseParameter( 1000,    0,   30,    0,   3,   75,    0,    0,   38 );
-        courseParams[1] = new CourseParameter( 1000,    0,    7,    0,   3,   25,    0,    0,   38 );
-//        courseParams[0] = new CourseParameter( 1000,    0,    0,    0,   2,   75,    0,    0,   38 );
-//        courseParams[1] = new CourseParameter(  100,    0,    0,    0,   2,   25,    0,    0,   38 );
-        courseParams[2] = new CourseParameter(  100,    0,    0,    0,   2,   25,    0,    0,  -15 );
-        courseParams[3] = new CourseParameter( 1200,    0,    0,    0,   2,   75,    0,    0,  -15 );
-        courseParams[4] = new CourseParameter(  100,    0,    0,    0,   2,   25,    0,    0,  -15 );
-        courseParams[5] = new CourseParameter(  100,    0,    0,    0,   2,  -25,    0,    0,   -1 );
-        courseParams[6] = new CourseParameter( 1500,    0,    0,    0,   2,  -75,    0,    0,   -1 );
-        courseParams[7] = new CourseParameter(  100,    0,    0,    0,   2,  -25,    0,    0,   -1 );
-        courseParams[7] = new CourseParameter(  280,    0,    0,    0,   2,   25,    0,    0,  -15 );
-        courseParams[7] = new CourseParameter(  100,    0,    0,    0,   2,   25,    0,    0,    0 );
-        courseParams[7] = new CourseParameter( 1300,    0,    0,    0,   2,   75,    0,    0,    0 );
-        courseParams[8] = new CourseParameter(    0,    0,    0,    0,  -1,    0,    0,    0,    0 );
+        courseParams[0]  = new CourseParameter(    0,  100,    0,    0,   2,   10,  100,    0,   38 );
+        courseParams[1]  = new CourseParameter(  600,    0,    0,    0,   2,   70,    0,    0,   38 );
+        courseParams[2]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,   38 );
+        courseParams[3]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,  -16 );
+        courseParams[4]  = new CourseParameter( 1200,    0,    0,    0,   2,   70,    0,    0,  -16 );
+        courseParams[5]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,  -16 );
+        courseParams[6]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    0,   -1 );
+        courseParams[7]  = new CourseParameter( 1500,    0,    0,    0,   2,  -70,    0,    0,   -1 );
+        courseParams[8]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    0,   -1 );
+        courseParams[9]  = new CourseParameter(    0,  300,    0,    0,   0,    0,    0,    0,   -1 );
+        courseParams[10] = new CourseParameter(  270,    0,    0,    0,   2,   20,    0,    0,  -28 );
+        courseParams[11] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,    1 );
+        courseParams[12] = new CourseParameter( 1200,    0,    0,    0,   2,   70,    0,    0,    1 );
+        courseParams[13] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,    1 );
+        courseParams[14] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    0,    0 );
+        courseParams[15] = new CourseParameter( 1500,    0,    0,    0,   2,  -70,    0,    0,    0 );
+        courseParams[16] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    0,    0 );
+        courseParams[17] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,  -41 );
+        courseParams[18] = new CourseParameter(  450,    0,    0,    0,   2,   70,    0,    0,  -41 );
+        courseParams[19] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,  -41 );
+        courseParams[20] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,   18 );
+        courseParams[21] = new CourseParameter( 1120,    0,    0,    0,   2,   70,    0,    0,   18 );
+        courseParams[22] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,   18 );
+        courseParams[22] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    0,   -1 );
+        courseParams[22] = new CourseParameter(    0,10000,    0,    5,   2,  -70,    0,    0,   -1 );
+        courseParams[23] = new CourseParameter(    0,    0,    0,    0,  -1,    0,    0,    0,    0 );
 
 
         // 使用するセンサー定義
@@ -79,6 +91,8 @@ public class Test {
         // モジュール初期化
         motorInit();
         gyroSensor.reset();
+
+        Sound.beep();
 
         // スタート待機 (20ms周期で実行)
         while ( ! Button.ENTER.isDown() ) {
