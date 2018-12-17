@@ -28,8 +28,10 @@ public class Test {
         int courseNumber = 0;
         CourseParameter[] courseParams = new CourseParameter[9];
         //                                   ( 距離, 時間,  ｿﾅｰ,   色, ﾄﾚﾓ, 前進, 旋回,  ｱｰﾑ,  PID );
-        courseParams[0] = new CourseParameter(  600,    0,    0,    0,   2,   75,    0,    0,   38 );
-        courseParams[1] = new CourseParameter(  100,    0,    0,    0,   2,   25,    0,    0,   38 );
+        courseParams[0] = new CourseParameter( 1000,    0,   30,    0,   3,   75,    0,    0,   38 );
+        courseParams[1] = new CourseParameter( 1000,    0,    7,    0,   3,   25,    0,    0,   38 );
+//        courseParams[0] = new CourseParameter( 1000,    0,    0,    0,   2,   75,    0,    0,   38 );
+//        courseParams[1] = new CourseParameter(  100,    0,    0,    0,   2,   25,    0,    0,   38 );
         courseParams[2] = new CourseParameter(  100,    0,    0,    0,   2,   25,    0,    0,  -15 );
         courseParams[3] = new CourseParameter( 1200,    0,    0,    0,   2,   75,    0,    0,  -15 );
         courseParams[4] = new CourseParameter(  100,    0,    0,    0,   2,   25,    0,    0,  -15 );
@@ -70,6 +72,9 @@ public class Test {
         int touchInt = 0;
         int armMode = 0;
         int beforeDistance = 0;
+        int tmpGyro = 0;
+        int search = 0;
+        int sonerSearchS = 0;
 
         // モジュール初期化
         motorInit();
@@ -91,6 +96,9 @@ public class Test {
             sonicInt = (int)(sonicValue[0] * 100);
             gyroInt = (int)(gyroValue[0]);
             touchInt = (int)(touchValue[0]);
+
+            tmpGyro = gyroInt;
+
 
             // 色の判定
             colorId = col.decision(red, green, blue);
@@ -159,6 +167,7 @@ public class Test {
                 stopwatch.reset();
                 //ビープ音を鳴らす
                 Sound.beep();
+                tmpGyro = gyroInt;
             }
 
             // 区間情報から値を取得する
@@ -166,10 +175,7 @@ public class Test {
             turn = courseParams[courseNumber].getTurn();
 
 
-            if (courseParams[courseNumber].getTraceMode() == 0) {
-                turn = 0;
-            }
-            else if (courseParams[courseNumber].getTraceMode() == 1) {
+            if (courseParams[courseNumber].getTraceMode() == 1) {
                 turn = turn + pidLine.calcControl(courseParams[courseNumber].getPidTarget() - colorSum);
                 if ( forward < 0 ) {
                     turn = turn * (-1);
@@ -179,6 +185,29 @@ public class Test {
                 turn = turn + pidGyro.calcControl(courseParams[courseNumber].getPidTarget() - gyroInt);
                 if ( forward < 0 ) {
                     turn = turn * (-1);
+                }
+            }
+            else if (courseParams[courseNumber].getTraceMode() == 3) {
+                if (search == 0) {
+                    if (45 > gyroInt - tmpGyro && sonerSearchS == 0) {
+                        turn = 100;
+                        forward = 10;
+                    }
+                    else if (sonerSearchS == 0){
+                        sonerSearchS = 1;
+                    }
+
+                    if (-45 < gyroInt - tmpGyro && sonerSearchS == 1) {
+                        turn = -100;
+                        forward = 10;
+                    }
+                    else if (sonerSearchS == 1){
+                        sonerSearchS = 0;
+                    }
+
+                    if (sonicInt > 100) {
+
+                    }
                 }
             }
 
@@ -237,7 +266,7 @@ public class Test {
         }
 
         if (courseParameter.getSonarDis() != 0) {
-            if (sonic <= courseParameter.getSonarDis()) {
+            if (0 < sonic && sonic <= courseParameter.getSonarDis()) {
                 changed = true;
             }
         }
