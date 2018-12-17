@@ -47,15 +47,16 @@ public class Test {
         SensorMode gyro = gyroSensor.getMode(1);
         SensorMode touch = touchSensor.getMode(0);
         // センサーの取得地を格納する配列
-        float colorValue[] = new float[color.sampleSize()];
-        float sonicValue[] = new float[sonic.sampleSize()];
-        float gyroValue[] = new float[gyro.sampleSize()];
-        float touchValue[] = new float[touch.sampleSize()];
+        float[] colorValue = new float[color.sampleSize()];
+        float[] sonicValue = new float[sonic.sampleSize()];
+        float[] gyroValue = new float[gyro.sampleSize()];
+        float[] touchValue = new float[touch.sampleSize()];
         Stopwatch counter = new Stopwatch();
         Stopwatch stopwatch = new Stopwatch();
         PID pidLine = new PID(1.2500F, 0.0001F, 0.1700F); /* ライントレース用PID */
         PID pidGyro = new PID(1.0000F, 0.0005F, 0.0700F); /* ジャイロトレース用PID */
         Distance dis = new Distance();
+        ColorPanel col = new ColorPanel();
         int forward = 0;
         int turn = 0;
         int red = 0;
@@ -90,6 +91,10 @@ public class Test {
             gyroInt = (int)(gyroValue[0]);
             touchInt = (int)(touchValue[0]);
 
+            // 色の判定
+            colorId = col.decision(red, green, blue);
+
+
             // LCD出力
             LCD.clear();
             LCD.drawString("Ready?", 0, 0);
@@ -97,7 +102,7 @@ public class Test {
             LCD.drawString("Gre: " + green, 0, 2);
             LCD.drawString("Blu: " + blue, 0, 3);
             LCD.drawString("RGB: " + colorSum, 0, 4);
-            LCD.drawString("Son: " + sonicInt, 0, 5);
+            LCD.drawString("Col: " + colorId, 0, 5);
             LCD.drawString("Gyr: " + gyroInt, 0, 6);
             LCD.drawString("Arm: " + armMotor.getTachoCount(), 0, 7);
 
@@ -142,6 +147,7 @@ public class Test {
             sonicInt = (int)(sonicValue[0] * 100);
             gyroInt = (int)(gyroValue[0]);
             touchInt = (int)(touchValue[0]);
+
 
             // 区間情報変更の確認
             if (courseChange(courseParams[courseNumber], dis.getDistance() - beforeDistance, stopwatch.elapsed(), sonicInt, colorId)) {
