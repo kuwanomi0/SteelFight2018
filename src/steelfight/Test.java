@@ -51,7 +51,7 @@ public class Test {
         float sonicValue[] = new float[sonic.sampleSize()];
         float gyroValue[] = new float[gyro.sampleSize()];
         float touchValue[] = new float[touch.sampleSize()];
-        SecondCounter counter = new SecondCounter();
+        Stopwatch counter = new Stopwatch();
         Stopwatch stopwatch = new Stopwatch();
         PID pidLine = new PID(1.2500F, 0.0001F, 0.1700F); /* ライントレース用PID */
         PID pidGyro = new PID(1.0000F, 0.0005F, 0.0700F); /* ジャイロトレース用PID */
@@ -120,11 +120,11 @@ public class Test {
         armMotorInit();
 
         // タイマー計測開始
-        counter.start();
+        counter.reset();
         stopwatch.reset();
 
         // 走行（10ms周期で実行）60秒経過すると終了する
-        while ( ! Button.ESCAPE.isDown() && counter.getSecond() < 6000 && courseParams[courseNumber].getTraceMode() != -1) {
+        while ( ! Button.ESCAPE.isDown() && counter.elapsed() < 600000 && courseParams[courseNumber].getTraceMode() != -1) {
             // センサー取得
             color.fetchSample(colorValue, 0);
             sonic.fetchSample(sonicValue, 0);
@@ -197,8 +197,6 @@ public class Test {
             // 10ms周期で実行
             Delay.msDelay(10);
         }
-        // タイマーを止める
-        counter.stop();
     }
 
     /**
