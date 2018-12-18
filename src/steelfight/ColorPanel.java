@@ -5,7 +5,7 @@ public class ColorPanel {
     int[] kRed    = { 28,  5,  3 };
     int[] kGreen  = {  5, 12,  5 };
     int[] kBlue   = {  4,  8, 15 };
-    int[] yellow = { 34, 15,  3 };
+    int[] yellow = { 29, 13,  4 };
     int[] white  = { 35, 28, 25 };
 
     public ColorPanel() {
