@@ -38,25 +38,25 @@ public class Test {
         courseParamsQ[0]  = new CourseParameter(    0,   70,    0,    0,   0,   10,  100,    1,   38 );
         courseParamsQ[1]  = new CourseParameter(  580,    0,    0,    0,   2,   50,    0,    1,   38 );
         courseParamsQ[2]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   38 );
-        courseParamsQ[3]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -18 );
-        courseParamsQ[4]  = new CourseParameter( 1180,    0,    0,    0,   2,   70,    0,    1,  -18 );
-        courseParamsQ[5]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -18 );
+        courseParamsQ[3]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -17 );
+        courseParamsQ[4]  = new CourseParameter( 1110,    0,    0,    0,   2,   70,    0,    1,  -18 );
+        courseParamsQ[5]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -17 );
         courseParamsQ[6]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   -1 );
         courseParamsQ[7]  = new CourseParameter( 1500,    0,    0,    0,   2,  -70,    0,    1,   -1 );
         courseParamsQ[8]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   -1 );
         courseParamsQ[9]  = new CourseParameter(    0,  300,    0,    0,   0,    0,    0,    1,   -1 );
-        courseParamsQ[10] = new CourseParameter(  270,    0,    0,    0,   2,   30,    0,    1,  -28 );
+        courseParamsQ[10] = new CourseParameter(  240,    0,    0,    0,   2,   30,    0,    1,  -25 );
         courseParamsQ[11] = new CourseParameter(  100,    0,    0,    0,   2,   30,    0,    1,    1 );
-        courseParamsQ[12] = new CourseParameter( 1200,    0,    0,    0,   2,   70,    0,    1,    1 );
+        courseParamsQ[12] = new CourseParameter( 1300,    0,    0,    0,   2,   70,    0,    1,    1 );
         courseParamsQ[13] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,    1 );
         courseParamsQ[14] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,    0 );
-        courseParamsQ[15] = new CourseParameter( 1550,    0,    0,    0,   2,  -70,    0,    1,    0 );
+        courseParamsQ[15] = new CourseParameter( 1570,    0,    0,    0,   2,  -70,    0,    1,    0 );
         courseParamsQ[16] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,    0 );
-        courseParamsQ[17] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -45 );
-        courseParamsQ[18] = new CourseParameter(  450,    0,    0,    0,   2,   70,    0,    1,  -45 );
-        courseParamsQ[19] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -45 );
+        courseParamsQ[17] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -44 );
+        courseParamsQ[18] = new CourseParameter(  450,    0,    0,    0,   2,   70,    0,    1,  -44 );
+        courseParamsQ[19] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -44 );
         courseParamsQ[20] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   19 );
-        courseParamsQ[21] = new CourseParameter( 1120,    0,    0,    0,   2,   70,    0,    1,   19 );
+        courseParamsQ[21] = new CourseParameter( 1200,    0,    0,    0,   2,   70,    0,    1,   19 );
         courseParamsQ[22] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   19 );
         courseParamsQ[23] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   -3 );
         courseParamsQ[24] = new CourseParameter(    0,10000,    0,    5,   2,  -70,    0,    1,   -3 );
@@ -67,52 +67,52 @@ public class Test {
         courseParamsFinal1[0]  = new CourseParameter(    0,   70,    0,    0,   0,   10,  100,    1,   38 );
         courseParamsFinal1[1]  = new CourseParameter(  580,    0,    0,    0,   2,   50,    0,    1,   38 );
         courseParamsFinal1[2]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   38 );
-        courseParamsFinal1[3]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -18 );
-        courseParamsFinal1[4]  = new CourseParameter( 1180,    0,    0,    0,   2,   70,    0,    1,  -18 );
-        courseParamsFinal1[5]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -18 );
+        courseParamsFinal1[3]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -17 );
+        courseParamsFinal1[4]  = new CourseParameter( 1110,    0,    0,    0,   2,   70,    0,    1,  -18 );
+        courseParamsFinal1[5]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -17 );
         courseParamsFinal1[6]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   -1 );
         courseParamsFinal1[7]  = new CourseParameter( 1500,    0,    0,    0,   2,  -70,    0,    1,   -1 );
         courseParamsFinal1[8]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   -1 );
         courseParamsFinal1[9]  = new CourseParameter(    0,  300,    0,    0,   0,    0,    0,    1,   -1 );
-        courseParamsFinal1[10] = new CourseParameter(  270,    0,    0,    0,   2,   30,    0,    1,  -28 );
+        courseParamsFinal1[10] = new CourseParameter(  240,    0,    0,    0,   2,   30,    0,    1,  -25 );
         courseParamsFinal1[11] = new CourseParameter(  100,    0,    0,    0,   2,   30,    0,    1,    1 );
-        courseParamsFinal1[12] = new CourseParameter( 1200,    0,    0,    0,   2,   70,    0,    1,    1 );
+        courseParamsFinal1[12] = new CourseParameter( 1300,    0,    0,    0,   2,   70,    0,    1,    1 );
         courseParamsFinal1[13] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,    1 );
         courseParamsFinal1[14] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,    0 );
-        courseParamsFinal1[15] = new CourseParameter( 1550,    0,    0,    0,   2,  -70,    0,    1,    0 );
+        courseParamsFinal1[15] = new CourseParameter( 1570,    0,    0,    0,   2,  -70,    0,    1,    0 );
         courseParamsFinal1[16] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,    0 );
-        courseParamsFinal1[17] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -45 );
-        courseParamsFinal1[18] = new CourseParameter(  450,    0,    0,    0,   2,   70,    0,    1,  -45 );
-        courseParamsFinal1[19] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -45 );
+        courseParamsFinal1[17] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -44 );
+        courseParamsFinal1[18] = new CourseParameter(  450,    0,    0,    0,   2,   70,    0,    1,  -44 );
+        courseParamsFinal1[19] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -44 );
         courseParamsFinal1[20] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   19 );
-        courseParamsFinal1[21] = new CourseParameter( 1120,    0,    0,    0,   2,   70,    0,    1,   19 );
+        courseParamsFinal1[21] = new CourseParameter( 1200,    0,    0,    0,   2,   70,    0,    1,   19 );
         courseParamsFinal1[22] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   19 );
         // ここから残りの2本
-        courseParamsFinal1[23] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,  -24 );
-        courseParamsFinal1[24] = new CourseParameter( 1150,    0,    0,    0,   2,  -70,    0,    1,  -24 );
+        courseParamsFinal1[23] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,  -17 );
+        courseParamsFinal1[24] = new CourseParameter( 1100,    0,    0,    0,   2,  -70,    0,    1,  -17 );
         // 一本目サーチ
-        courseParamsFinal1[25] = new CourseParameter(    0,    0,    9,    0,   3,   50,    0,    1,    0 );
-        courseParamsFinal1[26] = new CourseParameter(   70,    0,    0,    0,   0,   25,    0,    1,    0 );
-        courseParamsFinal1[27] = new CourseParameter(    0, 2500,    0,    0,   0,    2,    0,    0,    0 );
-        courseParamsFinal1[28] = new CourseParameter(   50,    0,    0,    0,   2,  -30,    0,    0,  114 );
-        courseParamsFinal1[29] = new CourseParameter(    0,    0,    0,    3,   2,  -30,    0,    0,  114 );
+        courseParamsFinal1[25] = new CourseParameter(    0,    0,   14,    0,   3,   50,    0,    1,    0 );
+        courseParamsFinal1[26] = new CourseParameter(  150,    0,    0,    0,   0,   25,    0,    1,    0 );
+        courseParamsFinal1[27] = new CourseParameter(    0, 2500,    0,    0,   0,    3,    0,    0,    0 );
+        courseParamsFinal1[28] = new CourseParameter(  100,    0,    0,    3,   2,  -30,    0,    0,  110 );
+        courseParamsFinal1[29] = new CourseParameter(    0,    0,    0,    3,   2,  -30,    0,    0,  110 );
         courseParamsFinal1[30] = new CourseParameter(    0,    0,    0,    3,   0,   10,    0,    0,    0 );
-        courseParamsFinal1[31] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,    0 );
+        courseParamsFinal1[31] = new CourseParameter(  100,    0,    0,    0,   2,   15,    0,    0,    0 );
         courseParamsFinal1[32] = new CourseParameter(    0,  750,    0,    0,   0,    0,    0,    1,    0 );
-        courseParamsFinal1[33] = new CourseParameter(    0,    0,    0,    4,   2,   70,    0,    1,    0 );
+        courseParamsFinal1[33] = new CourseParameter(    0,    0,    0,    2,   2,   70,    0,    1,    0 );
         courseParamsFinal1[34] = new CourseParameter(    0,  750,    0,    0,   0,    0,    0,    1,    0 );
-        courseParamsFinal1[35] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,  -24 );
-        courseParamsFinal1[36] = new CourseParameter(  925,    0,    0,    0,   2,  -70,    0,    1,  -24 );
+        courseParamsFinal1[35] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,  -17 );
+        courseParamsFinal1[36] = new CourseParameter( 1000,    0,    0,    0,   2,  -70,    0,    1,  -17 );
         // 二本目サーチ
-        courseParamsFinal1[37] = new CourseParameter(    0,    0,    9,    0,   3,   50,    0,    1,    0 );
-        courseParamsFinal1[38] = new CourseParameter(   70,    0,    0,    0,   0,   25,    0,    1,    0 );
-        courseParamsFinal1[39] = new CourseParameter(    0, 2500,    0,    0,   0,    2,    0,    0,    0 );
-        courseParamsFinal1[40] = new CourseParameter(   50,    0,    0,    0,   2,  -30,    0,    0,  114 );
-        courseParamsFinal1[41] = new CourseParameter(    0,    0,    0,    3,   2,  -30,    0,    0,  114 );
+        courseParamsFinal1[37] = new CourseParameter(    0,    0,   14,    0,   3,   50,    0,    1,    0 );
+        courseParamsFinal1[38] = new CourseParameter(  150,    0,    0,    0,   0,   25,    0,    1,    0 );
+        courseParamsFinal1[39] = new CourseParameter(    0, 2500,    0,    0,   0,    3,    0,    0,    0 );
+        courseParamsFinal1[40] = new CourseParameter(  100,    0,    0,    3,   2,  -30,    0,    0,  110 );
+        courseParamsFinal1[41] = new CourseParameter(    0,    0,    0,    3,   2,  -30,    0,    0,  110 );
         courseParamsFinal1[42] = new CourseParameter(    0,    0,    0,    3,   0,   10,    0,    0,    0 );
-        courseParamsFinal1[43] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,    0 );
+        courseParamsFinal1[43] = new CourseParameter(  100,    0,    0,    0,   2,   15,    0,    0,    0 );
         courseParamsFinal1[44] = new CourseParameter(    0,  250,    0,    0,   0,    0,    0,    1,    0 );
-        courseParamsFinal1[45] = new CourseParameter(    0,    0,    0,    4,   2,   70,    0,    1,    0 );
+        courseParamsFinal1[45] = new CourseParameter(    0,    0,    0,    2,   2,   70,    0,    1,    0 );
         courseParamsFinal1[46] = new CourseParameter(  400,    0,    0,    0,   2,  -70,    0,    1,    0 );
         courseParamsFinal1[47] = new CourseParameter(    0, 2500,    0,    0,   0,    0,    0,    0,    0 );
         courseParamsFinal1[48] = new CourseParameter(    0,    0,    0,    0,  -1,    0,    0,    0,    0 );
@@ -123,52 +123,52 @@ public class Test {
         courseParamsFinal2[0]  = new CourseParameter(    0,   70,    0,    0,   0,   10,  100,    1,   38 );
         courseParamsFinal2[1]  = new CourseParameter(  580,    0,    0,    0,   2,   50,    0,    1,   38 );
         courseParamsFinal2[2]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   38 );
-        courseParamsFinal2[3]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -18 );
-        courseParamsFinal2[4]  = new CourseParameter( 1180,    0,    0,    0,   2,   70,    0,    1,  -18 );
-        courseParamsFinal2[5]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -18 );
+        courseParamsFinal2[3]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -17 );
+        courseParamsFinal2[4]  = new CourseParameter( 1150,    0,    0,    0,   2,   70,    0,    1,  -18 );
+        courseParamsFinal2[5]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -17 );
         courseParamsFinal2[6]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   -1 );
         courseParamsFinal2[7]  = new CourseParameter( 1500,    0,    0,    0,   2,  -70,    0,    1,   -1 );
         courseParamsFinal2[8]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   -1 );
         courseParamsFinal2[9]  = new CourseParameter(    0,  300,    0,    0,   0,    0,    0,    1,   -1 );
-        courseParamsFinal2[10] = new CourseParameter(  270,    0,    0,    0,   2,   30,    0,    1,  -28 );
+        courseParamsFinal2[10] = new CourseParameter(  240,    0,    0,    0,   2,   30,    0,    1,  -25 );
         courseParamsFinal2[11] = new CourseParameter(  100,    0,    0,    0,   2,   30,    0,    1,    1 );
-        courseParamsFinal2[12] = new CourseParameter( 1200,    0,    0,    0,   2,   70,    0,    1,    1 );
+        courseParamsFinal2[12] = new CourseParameter( 1300,    0,    0,    0,   2,   70,    0,    1,    1 );
         courseParamsFinal2[13] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,    1 );
         courseParamsFinal2[14] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,    0 );
-        courseParamsFinal2[15] = new CourseParameter( 1550,    0,    0,    0,   2,  -70,    0,    1,    0 );
+        courseParamsFinal2[15] = new CourseParameter( 1570,    0,    0,    0,   2,  -70,    0,    1,    0 );
         courseParamsFinal2[16] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,    0 );
-        courseParamsFinal2[17] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -45 );
-        courseParamsFinal2[18] = new CourseParameter(  450,    0,    0,    0,   2,   70,    0,    1,  -45 );
-        courseParamsFinal2[19] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -45 );
+        courseParamsFinal2[17] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -44 );
+        courseParamsFinal2[18] = new CourseParameter(  450,    0,    0,    0,   2,   70,    0,    1,  -44 );
+        courseParamsFinal2[19] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -44 );
         courseParamsFinal2[20] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   19 );
-        courseParamsFinal2[21] = new CourseParameter( 1120,    0,    0,    0,   2,   70,    0,    1,   19 );
+        courseParamsFinal2[21] = new CourseParameter( 1200,    0,    0,    0,   2,   70,    0,    1,   19 );
         courseParamsFinal2[22] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   19 );
         // ここから残りの2本
-        courseParamsFinal2[23] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   24 );
-        courseParamsFinal2[24] = new CourseParameter( 1150,    0,    0,    0,   2,  -70,    0,    1,   24 );
+        courseParamsFinal2[23] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   17 );
+        courseParamsFinal2[24] = new CourseParameter( 1100,    0,    0,    0,   2,  -70,    0,    1,   17 );
         // 一本目サーチ
-        courseParamsFinal2[25] = new CourseParameter(    0,    0,    9,    0,   4,   50,    0,    1,    0 );
-        courseParamsFinal2[26] = new CourseParameter(   70,    0,    0,    0,   0,   25,    0,    1,    0 );
-        courseParamsFinal2[27] = new CourseParameter(    0, 2500,    0,    0,   0,    2,    0,    0,    0 );
-        courseParamsFinal2[28] = new CourseParameter(   50,    0,    0,    0,   2,  -30,    0,    0, -114 );
-        courseParamsFinal2[29] = new CourseParameter(    0,    0,    0,    3,   2,  -30,    0,    0, -114 );
+        courseParamsFinal2[25] = new CourseParameter(    0,    0,   14,    0,   4,   50,    0,    1,    0 );
+        courseParamsFinal2[26] = new CourseParameter(  150,    0,    0,    0,   0,   25,    0,    1,    0 );
+        courseParamsFinal2[27] = new CourseParameter(    0, 2500,    0,    0,   0,    3,    0,    0,    0 );
+        courseParamsFinal2[28] = new CourseParameter(  100,    0,    0,    3,   2,  -30,    0,    0, -110 );
+        courseParamsFinal2[29] = new CourseParameter(    0,    0,    0,    3,   2,  -30,    0,    0, -110 );
         courseParamsFinal2[30] = new CourseParameter(    0,    0,    0,    3,   0,   10,    0,    0,    0 );
-        courseParamsFinal2[31] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,    0 );
+        courseParamsFinal2[31] = new CourseParameter(  100,    0,    0,    0,   2,   15,    0,    0,    0 );
         courseParamsFinal2[32] = new CourseParameter(    0,  750,    0,    0,   0,    0,    0,    1,    0 );
-        courseParamsFinal2[33] = new CourseParameter(    0,    0,    0,    4,   2,   70,    0,    1,    0 );
+        courseParamsFinal2[33] = new CourseParameter(    0,    0,    0,    2,   2,   70,    0,    1,    0 );
         courseParamsFinal2[34] = new CourseParameter(    0,  750,    0,    0,   0,    0,    0,    1,    0 );
-        courseParamsFinal2[35] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   24 );
-        courseParamsFinal2[36] = new CourseParameter(  925,    0,    0,    0,   2,  -70,    0,    1,   24 );
+        courseParamsFinal2[35] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   17 );
+        courseParamsFinal2[36] = new CourseParameter( 1000,    0,    0,    0,   2,  -70,    0,    1,   17 );
         // 二本目サーチ
-        courseParamsFinal2[37] = new CourseParameter(    0,    0,    9,    0,   4,   50,    0,    1,    0 );
-        courseParamsFinal2[38] = new CourseParameter(   70,    0,    0,    0,   0,   25,    0,    1,    0 );
-        courseParamsFinal2[39] = new CourseParameter(    0, 2500,    0,    0,   0,    2,    0,    0,    0 );
-        courseParamsFinal2[40] = new CourseParameter(   50,    0,    0,    0,   2,  -30,    0,    0, -114 );
-        courseParamsFinal2[41] = new CourseParameter(    0,    0,    0,    3,   2,  -30,    0,    0, -114 );
+        courseParamsFinal2[37] = new CourseParameter(    0,    0,   14,    0,   4,   50,    0,    1,    0 );
+        courseParamsFinal2[38] = new CourseParameter(  150,    0,    0,    0,   0,   25,    0,    1,    0 );
+        courseParamsFinal2[39] = new CourseParameter(    0, 2500,    0,    0,   0,    3,    0,    0,    0 );
+        courseParamsFinal2[40] = new CourseParameter(  100,    0,    0,    3,   2,  -30,    0,    0, -110 );
+        courseParamsFinal2[41] = new CourseParameter(    0,    0,    0,    3,   2,  -30,    0,    0, -110 );
         courseParamsFinal2[42] = new CourseParameter(    0,    0,    0,    3,   0,   10,    0,    0,    0 );
-        courseParamsFinal2[43] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,    0 );
+        courseParamsFinal2[43] = new CourseParameter(  100,    0,    0,    0,   2,   15,    0,    0,    0 );
         courseParamsFinal2[44] = new CourseParameter(    0,  750,    0,    0,   0,    0,    0,    1,    0 );
-        courseParamsFinal2[45] = new CourseParameter(    0,    0,    0,    4,   2,   70,    0,    1,    0 );
+        courseParamsFinal2[45] = new CourseParameter(    0,    0,    0,    2,   2,   70,    0,    1,    0 );
         courseParamsFinal2[46] = new CourseParameter(  400,    0,    0,    0,   2,  -70,    0,    1,    0 );
         courseParamsFinal2[47] = new CourseParameter(    0, 2500,    0,    0,   0,    0,    0,    0,    0 );
         courseParamsFinal2[48] = new CourseParameter(    0,    0,    0,    0,  -1,    0,    0,    0,    0 );
@@ -179,63 +179,233 @@ public class Test {
         courseParamsFinal3[0]  = new CourseParameter(    0,   70,    0,    0,   0,   10,  100,    1,   38 );
         courseParamsFinal3[1]  = new CourseParameter(  580,    0,    0,    0,   2,   50,    0,    1,   38 );
         courseParamsFinal3[2]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   38 );
-        courseParamsFinal3[3]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -18 );
-        courseParamsFinal3[4]  = new CourseParameter( 1180,    0,    0,    0,   2,   70,    0,    1,  -18 );
-        courseParamsFinal3[5]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -18 );
+        courseParamsFinal3[3]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -17 );
+        courseParamsFinal3[4]  = new CourseParameter( 1150,    0,    0,    0,   2,   70,    0,    1,  -18 );
+        courseParamsFinal3[5]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -17 );
         courseParamsFinal3[6]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   -1 );
         courseParamsFinal3[7]  = new CourseParameter( 1500,    0,    0,    0,   2,  -70,    0,    1,   -1 );
         courseParamsFinal3[8]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   -1 );
         courseParamsFinal3[9]  = new CourseParameter(    0,  300,    0,    0,   0,    0,    0,    1,   -1 );
-        courseParamsFinal3[10] = new CourseParameter(  270,    0,    0,    0,   2,   30,    0,    1,  -28 );
+        courseParamsFinal3[10] = new CourseParameter(  240,    0,    0,    0,   2,   30,    0,    1,  -25 );
         courseParamsFinal3[11] = new CourseParameter(  100,    0,    0,    0,   2,   30,    0,    1,    1 );
-        courseParamsFinal3[12] = new CourseParameter( 1200,    0,    0,    0,   2,   70,    0,    1,    1 );
+        courseParamsFinal3[12] = new CourseParameter( 1300,    0,    0,    0,   2,   70,    0,    1,    1 );
         courseParamsFinal3[13] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,    1 );
         courseParamsFinal3[14] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,    0 );
-        courseParamsFinal3[15] = new CourseParameter( 1550,    0,    0,    0,   2,  -70,    0,    1,    0 );
+        courseParamsFinal3[15] = new CourseParameter( 1570,    0,    0,    0,   2,  -70,    0,    1,    0 );
         courseParamsFinal3[16] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,    0 );
-        courseParamsFinal3[17] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -45 );
-        courseParamsFinal3[18] = new CourseParameter(  450,    0,    0,    0,   2,   70,    0,    1,  -45 );
-        courseParamsFinal3[19] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -45 );
+        courseParamsFinal3[17] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -44 );
+        courseParamsFinal3[18] = new CourseParameter(  450,    0,    0,    0,   2,   70,    0,    1,  -44 );
+        courseParamsFinal3[19] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -44 );
         courseParamsFinal3[20] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   19 );
-        courseParamsFinal3[21] = new CourseParameter( 1120,    0,    0,    0,   2,   70,    0,    1,   19 );
+        courseParamsFinal3[21] = new CourseParameter( 1200,    0,    0,    0,   2,   70,    0,    1,   19 );
         courseParamsFinal3[22] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   19 );
         // ここから残りの2本
-        courseParamsFinal3[23] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,  -24 );
-        courseParamsFinal3[24] = new CourseParameter( 1150,    0,    0,    0,   2,  -70,    0,    1,  -24 );
+        courseParamsFinal3[23] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,  -17 );
+        courseParamsFinal3[24] = new CourseParameter( 1100,    0,    0,    0,   2,  -70,    0,    1,  -17 );
         // 一本目サーチ
-        courseParamsFinal3[25] = new CourseParameter(    0,    0,    9,    0,   3,   50,    0,    1,    0 );
-        courseParamsFinal3[26] = new CourseParameter(   70,    0,    0,    0,   0,   25,    0,    1,    0 );
-        courseParamsFinal3[27] = new CourseParameter(    0, 2500,    0,    0,   0,    2,    0,    0,    0 );
-        courseParamsFinal3[28] = new CourseParameter(   50,    0,    0,    0,   2,  -30,    0,    0,  114 );
-        courseParamsFinal3[29] = new CourseParameter(    0,    0,    0,    3,   2,  -30,    0,    0,  114 );
+        courseParamsFinal3[25] = new CourseParameter(    0,    0,   14,    0,   3,   50,    0,    1,    0 );
+        courseParamsFinal3[26] = new CourseParameter(  150,    0,    0,    0,   0,   25,    0,    1,    0 );
+        courseParamsFinal3[27] = new CourseParameter(    0, 2500,    0,    0,   0,    3,    0,    0,    0 );
+        courseParamsFinal3[28] = new CourseParameter(  100,    0,    0,    3,   2,  -30,    0,    0,  110 );
+        courseParamsFinal3[29] = new CourseParameter(    0,    0,    0,    3,   2,  -30,    0,    0,  110 );
         courseParamsFinal3[30] = new CourseParameter(    0,    0,    0,    3,   0,   10,    0,    0,    0 );
-        courseParamsFinal3[31] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,    0 );
+        courseParamsFinal3[31] = new CourseParameter(  100,    0,    0,    0,   2,   15,    0,    0,    0 );
         courseParamsFinal3[32] = new CourseParameter(    0,  750,    0,    0,   0,    0,    0,    1,    0 );
-        courseParamsFinal3[33] = new CourseParameter(    0,    0,    0,    4,   2,   70,    0,    1,    0 );
+        courseParamsFinal3[33] = new CourseParameter(    0,    0,    0,    2,   2,   70,    0,    1,    0 );
         courseParamsFinal3[34] = new CourseParameter(    0,  750,    0,    0,   0,    0,    0,    1,    0 );
-        courseParamsFinal3[35] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   24 );
-        courseParamsFinal3[36] = new CourseParameter(  925,    0,    0,    0,   2,  -70,    0,    1,   24 );
+        courseParamsFinal3[35] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   17 );
+        courseParamsFinal3[36] = new CourseParameter( 1000,    0,    0,    0,   2,  -70,    0,    1,   17 );
         // 二本目サーチ
-        courseParamsFinal3[37] = new CourseParameter(    0,    0,    9,    0,   4,   50,    0,    1,    0 );
-        courseParamsFinal3[38] = new CourseParameter(   70,    0,    0,    0,   0,   25,    0,    1,    0 );
-        courseParamsFinal3[39] = new CourseParameter(    0, 2500,    0,    0,   0,    2,    0,    0,    0 );
-        courseParamsFinal3[40] = new CourseParameter(   50,    0,    0,    0,   2,  -30,    0,    0, -114 );
-        courseParamsFinal3[41] = new CourseParameter(    0,    0,    0,    3,   2,  -30,    0,    0, -114 );
+        courseParamsFinal3[37] = new CourseParameter(    0,    0,   14,    0,   4,   50,    0,    1,    0 );
+        courseParamsFinal3[38] = new CourseParameter(  150,    0,    0,    0,   0,   25,    0,    1,    0 );
+        courseParamsFinal3[39] = new CourseParameter(    0, 2500,    0,    0,   0,    3,    0,    0,    0 );
+        courseParamsFinal3[40] = new CourseParameter(  100,    0,    0,    3,   2,  -30,    0,    0, -110 );
+        courseParamsFinal3[41] = new CourseParameter(    0,    0,    0,    3,   2,  -30,    0,    0, -110 );
         courseParamsFinal3[42] = new CourseParameter(    0,    0,    0,    3,   0,   10,    0,    0,    0 );
-        courseParamsFinal3[43] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    0,    0 );
+        courseParamsFinal3[43] = new CourseParameter(  100,    0,    0,    0,   2,   15,    0,    0,    0 );
         courseParamsFinal3[44] = new CourseParameter(    0,  750,    0,    0,   0,    0,    0,    1,    0 );
-        courseParamsFinal3[45] = new CourseParameter(    0,    0,    0,    4,   2,   70,    0,    1,    0 );
+        courseParamsFinal3[45] = new CourseParameter(    0,    0,    0,    2,   2,   70,    0,    1,    0 );
         courseParamsFinal3[46] = new CourseParameter(  400,    0,    0,    0,   2,  -70,    0,    1,    0 );
         courseParamsFinal3[47] = new CourseParameter(    0, 2500,    0,    0,   0,    0,    0,    0,    0 );
         courseParamsFinal3[48] = new CourseParameter(    0,    0,    0,    0,  -1,    0,    0,    0,    0 );
 
+
+
+        CourseParameter[] courseParamsFinal4 = new CourseParameter[49];
+        //                                          ( 距離, 時間,  ｿﾅｰ,   色, ﾄﾚﾓ, 前進, 旋回,  ｱｰﾑ,  PID );
+        courseParamsFinal4[0]  = new CourseParameter(    0,   70,    0,    0,   0,   10,  100,    1,   38 );
+        courseParamsFinal4[1]  = new CourseParameter(  580,    0,    0,    0,   2,   50,    0,    1,   38 );
+        courseParamsFinal4[2]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   38 );
+        courseParamsFinal4[3]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -17 );
+        courseParamsFinal4[4]  = new CourseParameter( 1110,    0,    0,    0,   2,   70,    0,    1,  -18 );
+        courseParamsFinal4[5]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -17 );
+        courseParamsFinal4[6]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   -1 );
+        courseParamsFinal4[7]  = new CourseParameter( 1500,    0,    0,    0,   2,  -70,    0,    1,   -1 );
+        courseParamsFinal4[8]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   -1 );
+        courseParamsFinal4[9]  = new CourseParameter(    0,  300,    0,    0,   0,    0,    0,    1,   -1 );
+        courseParamsFinal4[10] = new CourseParameter(  240,    0,    0,    0,   2,   30,    0,    1,  -25 );
+        courseParamsFinal4[11] = new CourseParameter(  100,    0,    0,    0,   2,   30,    0,    1,    1 );
+        courseParamsFinal4[12] = new CourseParameter( 1300,    0,    0,    0,   2,   70,    0,    1,    1 );
+        courseParamsFinal4[13] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,    1 );
+        courseParamsFinal4[14] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,    0 );
+        courseParamsFinal4[15] = new CourseParameter( 1570,    0,    0,    0,   2,  -70,    0,    1,    0 );
+        courseParamsFinal4[16] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,    0 );
+        courseParamsFinal4[17] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -44 );
+        courseParamsFinal4[18] = new CourseParameter(  450,    0,    0,    0,   2,   70,    0,    1,  -44 );
+        courseParamsFinal4[19] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -44 );
+        courseParamsFinal4[20] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   19 );
+        courseParamsFinal4[21] = new CourseParameter( 1200,    0,    0,    0,   2,   70,    0,    1,   19 );
+        courseParamsFinal4[22] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   19 );
+        // ここから残りの2本
+        courseParamsFinal4[23] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,    0 );
+        courseParamsFinal4[24] = new CourseParameter( 1050,    0,    0,    0,   2,  -70,    0,    1,    0 );
+        // 一本目サーチ
+        courseParamsFinal4[25] = new CourseParameter(    0,    0,   14,    0,   3,   50,    0,    1,    0 );
+        courseParamsFinal4[26] = new CourseParameter(  150,    0,    0,    0,   0,   25,    0,    1,    0 );
+        courseParamsFinal4[27] = new CourseParameter(    0, 2500,    0,    0,   0,    3,    0,    0,    0 );
+        courseParamsFinal4[28] = new CourseParameter(  100,    0,    0,    3,   2,  -30,    0,    0,  110 );
+        courseParamsFinal4[29] = new CourseParameter(    0,    0,    0,    3,   2,  -30,    0,    0,  110 );
+        courseParamsFinal4[30] = new CourseParameter(    0,    0,    0,    3,   0,   10,    0,    0,    0 );
+        courseParamsFinal4[31] = new CourseParameter(  100,    0,    0,    0,   2,   15,    0,    0,    0 );
+        courseParamsFinal4[32] = new CourseParameter(    0,  750,    0,    0,   0,    0,    0,    1,    0 );
+        courseParamsFinal4[33] = new CourseParameter(    0,    0,    0,    2,   2,   70,    0,    1,    0 );
+        courseParamsFinal4[34] = new CourseParameter(    0,  750,    0,    0,   0,    0,    0,    1,    0 );
+        courseParamsFinal4[35] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,  -17 );
+        courseParamsFinal4[36] = new CourseParameter( 1000,    0,    0,    0,   2,  -70,    0,    1,  -17 );
+        // 二本目サーチ
+        courseParamsFinal4[37] = new CourseParameter(    0,    0,   14,    0,   3,   50,    0,    1,    0 );
+        courseParamsFinal4[38] = new CourseParameter(  150,    0,    0,    0,   0,   25,    0,    1,    0 );
+        courseParamsFinal4[39] = new CourseParameter(    0, 2500,    0,    0,   0,    3,    0,    0,    0 );
+        courseParamsFinal4[40] = new CourseParameter(  100,    0,    0,    3,   2,  -30,    0,    0,  110 );
+        courseParamsFinal4[41] = new CourseParameter(    0,    0,    0,    3,   2,  -30,    0,    0,  110 );
+        courseParamsFinal4[42] = new CourseParameter(    0,    0,    0,    3,   0,   10,    0,    0,    0 );
+        courseParamsFinal4[43] = new CourseParameter(  100,    0,    0,    0,   2,   15,    0,    0,    0 );
+        courseParamsFinal4[44] = new CourseParameter(    0,  250,    0,    0,   0,    0,    0,    1,    0 );
+        courseParamsFinal4[45] = new CourseParameter(    0,    0,    0,    2,   2,   70,    0,    1,    0 );
+        courseParamsFinal4[46] = new CourseParameter(  400,    0,    0,    0,   2,  -70,    0,    1,    0 );
+        courseParamsFinal4[47] = new CourseParameter(    0, 2500,    0,    0,   0,    0,    0,    0,    0 );
+        courseParamsFinal4[48] = new CourseParameter(    0,    0,    0,    0,  -1,    0,    0,    0,    0 );
+
+        CourseParameter[] courseParamsFinal5 = new CourseParameter[49];
+        //                                         ( 距離, 時間,  ｿﾅｰ,   色, ﾄﾚﾓ, 前進, 旋回,  ｱｰﾑ,  PID );
+        courseParamsFinal5[0]  = new CourseParameter(    0,   70,    0,    0,   0,   10,  100,    1,   38 );
+        courseParamsFinal5[1]  = new CourseParameter(  580,    0,    0,    0,   2,   50,    0,    1,   38 );
+        courseParamsFinal5[2]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   38 );
+        courseParamsFinal5[3]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -17 );
+        courseParamsFinal5[4]  = new CourseParameter( 1150,    0,    0,    0,   2,   70,    0,    1,  -18 );
+        courseParamsFinal5[5]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -17 );
+        courseParamsFinal5[6]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   -1 );
+        courseParamsFinal5[7]  = new CourseParameter( 1500,    0,    0,    0,   2,  -70,    0,    1,   -1 );
+        courseParamsFinal5[8]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   -1 );
+        courseParamsFinal5[9]  = new CourseParameter(    0,  300,    0,    0,   0,    0,    0,    1,   -1 );
+        courseParamsFinal5[10] = new CourseParameter(  240,    0,    0,    0,   2,   30,    0,    1,  -25 );
+        courseParamsFinal5[11] = new CourseParameter(  100,    0,    0,    0,   2,   30,    0,    1,    1 );
+        courseParamsFinal5[12] = new CourseParameter( 1300,    0,    0,    0,   2,   70,    0,    1,    1 );
+        courseParamsFinal5[13] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,    1 );
+        courseParamsFinal5[14] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,    0 );
+        courseParamsFinal5[15] = new CourseParameter( 1570,    0,    0,    0,   2,  -70,    0,    1,    0 );
+        courseParamsFinal5[16] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,    0 );
+        courseParamsFinal5[17] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -44 );
+        courseParamsFinal5[18] = new CourseParameter(  450,    0,    0,    0,   2,   70,    0,    1,  -44 );
+        courseParamsFinal5[19] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -44 );
+        courseParamsFinal5[20] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   19 );
+        courseParamsFinal5[21] = new CourseParameter( 1200,    0,    0,    0,   2,   70,    0,    1,   19 );
+        courseParamsFinal5[22] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   19 );
+        // ここから残りの2本
+        courseParamsFinal5[23] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,    0 );
+        courseParamsFinal5[24] = new CourseParameter( 1050,    0,    0,    0,   2,  -70,    0,    1,    0 );
+        // 一本目サーチ
+        courseParamsFinal5[25] = new CourseParameter(    0,    0,   14,    0,   4,   50,    0,    1,    0 );
+        courseParamsFinal5[26] = new CourseParameter(  150,    0,    0,    0,   0,   25,    0,    1,    0 );
+        courseParamsFinal5[27] = new CourseParameter(    0, 2500,    0,    0,   0,    3,    0,    0,    0 );
+        courseParamsFinal5[28] = new CourseParameter(  100,    0,    0,    3,   2,  -30,    0,    0, -110 );
+        courseParamsFinal5[29] = new CourseParameter(    0,    0,    0,    3,   2,  -30,    0,    0, -110 );
+        courseParamsFinal5[30] = new CourseParameter(    0,    0,    0,    3,   0,   10,    0,    0,    0 );
+        courseParamsFinal5[31] = new CourseParameter(  100,    0,    0,    0,   2,   15,    0,    0,    0 );
+        courseParamsFinal5[32] = new CourseParameter(    0,  750,    0,    0,   0,    0,    0,    1,    0 );
+        courseParamsFinal5[33] = new CourseParameter(    0,    0,    0,    2,   2,   70,    0,    1,    0 );
+        courseParamsFinal5[34] = new CourseParameter(    0,  750,    0,    0,   0,    0,    0,    1,    0 );
+        courseParamsFinal5[35] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   17 );
+        courseParamsFinal5[36] = new CourseParameter( 1000,    0,    0,    0,   2,  -70,    0,    1,   17 );
+        // 二本目サーチ
+        courseParamsFinal5[37] = new CourseParameter(    0,    0,   14,    0,   4,   50,    0,    1,    0 );
+        courseParamsFinal5[38] = new CourseParameter(  150,    0,    0,    0,   0,   25,    0,    1,    0 );
+        courseParamsFinal5[39] = new CourseParameter(    0, 2500,    0,    0,   0,    3,    0,    0,    0 );
+        courseParamsFinal5[40] = new CourseParameter(  100,    0,    0,    3,   2,  -30,    0,    0, -110 );
+        courseParamsFinal5[41] = new CourseParameter(    0,    0,    0,    3,   2,  -30,    0,    0, -110 );
+        courseParamsFinal5[42] = new CourseParameter(    0,    0,    0,    3,   0,   10,    0,    0,    0 );
+        courseParamsFinal5[43] = new CourseParameter(  100,    0,    0,    0,   2,   15,    0,    0,    0 );
+        courseParamsFinal5[44] = new CourseParameter(    0,  750,    0,    0,   0,    0,    0,    1,    0 );
+        courseParamsFinal5[45] = new CourseParameter(    0,    0,    0,    2,   2,   70,    0,    1,    0 );
+        courseParamsFinal5[46] = new CourseParameter(  400,    0,    0,    0,   2,  -70,    0,    1,    0 );
+        courseParamsFinal5[47] = new CourseParameter(    0, 2500,    0,    0,   0,    0,    0,    0,    0 );
+        courseParamsFinal5[48] = new CourseParameter(    0,    0,    0,    0,  -1,    0,    0,    0,    0 );
+
+
+        CourseParameter[] courseParamsFinal6 = new CourseParameter[49];
+        //                                         ( 距離, 時間,  ｿﾅｰ,   色, ﾄﾚﾓ, 前進, 旋回,  ｱｰﾑ,  PID );
+        courseParamsFinal6[0]  = new CourseParameter(    0,   70,    0,    0,   0,   10,  100,    1,   38 );
+        courseParamsFinal6[1]  = new CourseParameter(  580,    0,    0,    0,   2,   50,    0,    1,   38 );
+        courseParamsFinal6[2]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   38 );
+        courseParamsFinal6[3]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -17 );
+        courseParamsFinal6[4]  = new CourseParameter( 1150,    0,    0,    0,   2,   70,    0,    1,  -18 );
+        courseParamsFinal6[5]  = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -17 );
+        courseParamsFinal6[6]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   -1 );
+        courseParamsFinal6[7]  = new CourseParameter( 1500,    0,    0,    0,   2,  -70,    0,    1,   -1 );
+        courseParamsFinal6[8]  = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,   -1 );
+        courseParamsFinal6[9]  = new CourseParameter(    0,  300,    0,    0,   0,    0,    0,    1,   -1 );
+        courseParamsFinal6[10] = new CourseParameter(  240,    0,    0,    0,   2,   30,    0,    1,  -25 );
+        courseParamsFinal6[11] = new CourseParameter(  100,    0,    0,    0,   2,   30,    0,    1,    1 );
+        courseParamsFinal6[12] = new CourseParameter( 1300,    0,    0,    0,   2,   70,    0,    1,    1 );
+        courseParamsFinal6[13] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,    1 );
+        courseParamsFinal6[14] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,    0 );
+        courseParamsFinal6[15] = new CourseParameter( 1570,    0,    0,    0,   2,  -70,    0,    1,    0 );
+        courseParamsFinal6[16] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,    0 );
+        courseParamsFinal6[17] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -44 );
+        courseParamsFinal6[18] = new CourseParameter(  450,    0,    0,    0,   2,   70,    0,    1,  -44 );
+        courseParamsFinal6[19] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,  -44 );
+        courseParamsFinal6[20] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   19 );
+        courseParamsFinal6[21] = new CourseParameter( 1200,    0,    0,    0,   2,   70,    0,    1,   19 );
+        courseParamsFinal6[22] = new CourseParameter(  100,    0,    0,    0,   2,   20,    0,    1,   19 );
+        // ここから残りの2本
+        courseParamsFinal6[23] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,    0 );
+        courseParamsFinal6[24] = new CourseParameter( 1050,    0,    0,    0,   2,  -70,    0,    1,    0 );
+        // 一本目サーチ
+        courseParamsFinal6[25] = new CourseParameter(    0,    0,   14,    0,   3,   50,    0,    1,    0 );
+        courseParamsFinal6[26] = new CourseParameter(  150,    0,    0,    0,   0,   25,    0,    1,    0 );
+        courseParamsFinal6[27] = new CourseParameter(    0, 2500,    0,    0,   0,    3,    0,    0,    0 );
+        courseParamsFinal6[28] = new CourseParameter(  100,    0,    0,    3,   2,  -30,    0,    0,  110 );
+        courseParamsFinal6[29] = new CourseParameter(    0,    0,    0,    3,   2,  -30,    0,    0,  110 );
+        courseParamsFinal6[30] = new CourseParameter(    0,    0,    0,    3,   0,   10,    0,    0,    0 );
+        courseParamsFinal6[31] = new CourseParameter(  100,    0,    0,    0,   2,   15,    0,    0,    0 );
+        courseParamsFinal6[32] = new CourseParameter(    0,  750,    0,    0,   0,    0,    0,    1,    0 );
+        courseParamsFinal6[33] = new CourseParameter(    0,    0,    0,    2,   2,   70,    0,    1,    0 );
+        courseParamsFinal6[34] = new CourseParameter(    0,  750,    0,    0,   0,    0,    0,    1,    0 );
+        courseParamsFinal6[35] = new CourseParameter(  100,    0,    0,    0,   2,  -20,    0,    1,    0 );
+        courseParamsFinal6[36] = new CourseParameter(  980,    0,    0,    0,   2,  -70,    0,    1,    0 );
+        // 二本目サーチ
+        courseParamsFinal6[37] = new CourseParameter(    0,    0,   14,    0,   4,   50,    0,    1,    0 );
+        courseParamsFinal6[38] = new CourseParameter(  150,    0,    0,    0,   0,   25,    0,    1,    0 );
+        courseParamsFinal6[39] = new CourseParameter(    0, 2500,    0,    0,   0,    3,    0,    0,    0 );
+        courseParamsFinal6[40] = new CourseParameter(  100,    0,    0,    3,   2,  -30,    0,    0, -110 );
+        courseParamsFinal6[41] = new CourseParameter(    0,    0,    0,    3,   2,  -30,    0,    0, -110 );
+        courseParamsFinal6[42] = new CourseParameter(    0,    0,    0,    3,   0,   10,    0,    0,    0 );
+        courseParamsFinal6[43] = new CourseParameter(  100,    0,    0,    0,   2,   15,    0,    0,    0 );
+        courseParamsFinal6[44] = new CourseParameter(    0,  750,    0,    0,   0,    0,    0,    1,    0 );
+        courseParamsFinal6[45] = new CourseParameter(    0,    0,    0,    2,   2,   70,    0,    1,    0 );
+        courseParamsFinal6[46] = new CourseParameter(  400,    0,    0,    0,   2,  -70,    0,    1,    0 );
+        courseParamsFinal6[47] = new CourseParameter(    0, 2500,    0,    0,   0,    0,    0,    0,    0 );
+        courseParamsFinal6[48] = new CourseParameter(    0,    0,    0,    0,  -1,    0,    0,    0,    0 );
+
+
+
         CourseParameter[] courseParamsArmTest = new CourseParameter[10];
         //                                           ( 距離, 時間,  ｿﾅｰ,   色, ﾄﾚﾓ, 前進, 旋回,  ｱｰﾑ,  PID );
-        courseParamsArmTest[0]  = new CourseParameter(    0,    0,    9,    0,   4,   30,    0,    1,    0 );
-        courseParamsArmTest[1]  = new CourseParameter(   70,    0,    0,    0,   0,   10,    0,    1,    0 );
-        courseParamsArmTest[2]  = new CourseParameter(    0, 2500,    0,    0,   0,    0,    0,    0,    0 );
-        courseParamsArmTest[3]  = new CourseParameter(   50,    0,    0,    0,   2,  -30,    0,    0,    0 );
-        courseParamsArmTest[4]  = new CourseParameter( 1000,    0,    0,    0,   2,  -30,    0,    0,    0 );
+        courseParamsArmTest[0]  = new CourseParameter(    0,    0,   12,    0,   3,   50,    0,    1,    0 );
+        courseParamsArmTest[1]  = new CourseParameter(  130,    0,    0,    0,   0,   25,    0,    1,    0 );
+        courseParamsArmTest[2]  = new CourseParameter(    0, 2500,    0,    0,   0,    3,    0,    0,    0 );
+        courseParamsArmTest[3]  = new CourseParameter(   50,    0,    0,    0,   2,  -23,    0,    0,    0 );
+        courseParamsArmTest[4]  = new CourseParameter( 1000,    0,    0,    0,   2,  -23,    0,    0,    0 );
         courseParamsArmTest[5]  = new CourseParameter(  200,    0,    0,    0,   2,   10,    0,    0,    0 );
         courseParamsArmTest[6]  = new CourseParameter(    0,    0,    0,    2,   2,   50,    0,    0,    0 );
         courseParamsArmTest[7]  = new CourseParameter(  200,    0,    0,    0,   2,   10,    0,    0,    0 );
@@ -251,10 +421,15 @@ public class Test {
         courseParamsLineTest[4]  = new CourseParameter(    0, 5000,    0,    0,   0,    0,    0,    0,    0 );
         courseParamsLineTest[5]  = new CourseParameter(    0,    0,    0,    0,  -1,    0,    0,    0,    0 );
 
+
+
         selectCourse.add(courseParamsQ);
         selectCourse.add(courseParamsFinal1);
         selectCourse.add(courseParamsFinal2);
         selectCourse.add(courseParamsFinal3);
+        selectCourse.add(courseParamsFinal4);
+        selectCourse.add(courseParamsFinal5);
+        selectCourse.add(courseParamsFinal6);
         selectCourse.add(courseParamsArmTest);
         selectCourse.add(courseParamsLineTest);
 
@@ -285,7 +460,6 @@ public class Test {
         int sonicInt = 0;
         int gyroInt = 0;
         int touchInt = 0;
-        int armMode = 0;
         int beforeDistance = 0;
         int tmptmpGyro = 0;
         int tmpGyro = 0;
@@ -295,8 +469,9 @@ public class Test {
         int selectCourseNumbar = 0;
         int reverseSwitch = 0;
         int sonerTmp = 0;
-        int runningTime = 600000;
+        int runningTime = 700000;
         int forwardT = 5;
+        int turnT = 0;
 
         // モジュール初期化
         motorInit();
@@ -374,7 +549,7 @@ public class Test {
 
         courseParams = selectCourse.get(selectCourseNumbar);
         if (selectCourseNumbar != 0) {
-            runningTime = 120000;
+            runningTime = 140000;
         }
 
         // アームモーターリセット
@@ -387,7 +562,7 @@ public class Test {
             sonerSearchS = 1;
 
         }
-        sonerTmp = 100;
+        sonerTmp = 105;
 
         if (courseParams[courseNumber].getTraceMode() == 4) {
             sonerSearchS = 1;
@@ -413,6 +588,10 @@ public class Test {
             gyroInt = (int)(gyroValue[0]);
             touchInt = (int)(touchValue[0]);
 
+            if (touchInt == 1) {
+                sonicInt = 1;
+            }
+
             // 色の判定
             colorId = col.decision(red, green, blue);
 
@@ -425,7 +604,7 @@ public class Test {
                 Sound.beep();
                 search = 0;
                 tmptmpGyro = tmpGyro = gyroInt;
-                sonerTmp = 100;
+                sonerTmp = 105;
                 if (courseParams[courseNumber].getTraceMode() == 4) {
                     sonerSearchS = 1;
                 }
@@ -473,15 +652,17 @@ public class Test {
             else if (courseParams[courseNumber].getTraceMode() == 3 || courseParams[courseNumber].getTraceMode() == 4) {
                 if (search == 0 || search == 1) {
                     if (search == 0) {
-                        gyroAngle = 180;
+                        gyroAngle = 200;
                         forwardT = 4;
+                        turnT = 100;
                     }
                     else if (search == 1) {
-                        gyroAngle = 45;
-                        forwardT = 1;
+                        gyroAngle = 30;
+                        forwardT = -2;
+                        turnT = -40;
                     }
                     if (gyroAngle > gyroInt - tmpGyro && sonerSearchS == 0) {
-                        turn = 100;
+                        turn = turnT;
                         forward = forwardT;
                     }
                     else if (sonerSearchS == 0){
@@ -489,7 +670,7 @@ public class Test {
                     }
 
                     if (-gyroAngle < gyroInt - tmpGyro && sonerSearchS == 1) {
-                        turn = -100;
+                        turn = -turnT;
                         forward = forwardT;
                     }
                     else if (sonerSearchS == 1){
@@ -502,16 +683,16 @@ public class Test {
                         }
                         search = 2;
                         sonerTmp = sonicInt + 25;
-                        if (sonerTmp > 100) {
-                            sonerTmp = 100;
+                        if (sonerTmp > 105) {
+                            sonerTmp = 105;
                         }
                     }
                 }
                 else if (search == 2) {
                     if (sonicInt <= sonerTmp) {
                         sonerTmp = sonicInt + 25;
-                        if (sonerTmp > 100) {
-                            sonerTmp = 100;
+                        if (sonerTmp > 105) {
+                            sonerTmp = 105;
                             search = 0;
                             tmpGyro = tmptmpGyro;
                         }
@@ -687,7 +868,7 @@ public class Test {
         int pwm = 0;
         int armTarget = 0;
         if (armMode == 0) {
-            armTarget = -120;
+            armTarget = -95;
         }
         if (armMode == 1) {
             armTarget = 600;
