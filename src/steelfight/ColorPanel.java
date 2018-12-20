@@ -1,12 +1,12 @@
 package steelfight;
 
 public class ColorPanel {
-    int[] black  = {  3,  3,  2 };
-    int[] kRed    = { 28,  5,  3 };
-    int[] kGreen  = {  5, 12,  5 };
-    int[] kBlue   = {  4,  8, 15 };
-    int[] yellow = { 29, 13,  4 };
-    int[] white  = { 35, 28, 25 };
+    int[] black  = {  3,  3,  2 }; //
+    int[] kRed   = { 28,  5,  3 }; // 32  5  3
+    int[] kGreen = {  5, 12,  5 }; //  5 16  6
+    int[] kBlue  = {  4,  8, 15 }; //  4  8 15
+    int[] yellow = { 29, 13,  4 }; // 37 16  4
+    int[] white  = { 35, 28, 25 }; // 37 29 25
 
     public ColorPanel() {
     }
