@@ -1,7 +1,5 @@
 # SteelFight2018 Java
-第27回スチールファイト用のリポジトリ Java版
-
-[C++版](https://github.com/kuwanomi0/SteelFight2018cpp)
+第27回スチールファイト用のリポジトリ
 
 ## 構成
 ```
